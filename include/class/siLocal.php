@@ -2,6 +2,17 @@
 /* Class: wrapper class for zend locale*/
 class siLocal 
 {
+    /*Function: wrapper function for zend_locale_format::toCurrency*/
+    public static function currency($number,$locale="")
+    {
+        global $config;
+        
+        $locale == "" ? $locale = new Zend_Locale($config->local->locale) : $locale = $locale;
+
+        $formatted_currency = New Zend_Currency($locale);
+        return $formatted_currency->toCurrency($number);
+    }
+
 	/*Function: wrapper function for zend_locale_format::toNumber*/
 	public static function number($number,$precision="",$locale="")
 	{
