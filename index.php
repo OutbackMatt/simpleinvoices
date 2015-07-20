@@ -84,6 +84,10 @@ $smarty -> assign("module",$module);
 $smarty -> assign("view",$view);
 $smarty -> assign("siUrl",$siUrl);//used for template css
 
+// For showing total owed all invoices
+$TotalAllOwed = new TotalOwing();
+
+
 $smarty -> assign("LANG",$LANG);
 //For Making easy enabled pop-menus (see biller)
 $smarty -> assign("enabled",array($LANG['disabled'],$LANG['enabled']));
@@ -462,6 +466,9 @@ if($module == "export" OR $view == "export" OR $module == "api")
 /*
 * Main : If extension has custom menu use it else use default - end
 */
+
+// Helps show total owed all invoices
+$smarty->assign("TotalOfAllOwed",siLocal::Currency(TotalOwing::$Owing_total));
 
 
 /*
