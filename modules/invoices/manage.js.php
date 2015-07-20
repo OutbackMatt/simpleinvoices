@@ -55,7 +55,7 @@
 			sortorder: "{/literal}{$smarty.get.sortorder|default:'desc'}{literal}",
 			usepager: true,
 			/*title: 'Manage Custom Fields',*/
-			pagestat: '{/literal}{$LANG.displaying_items}{literal}',
+			pagestat: '{/literal}{$LANG.displaying_items} <b>{$TotalOfAllOwed}</b>{literal}',
 			procmsg: '{/literal}{$LANG.processing}{literal}',
 			nomsg: '{/literal}{$LANG.no_items}{literal}',
 			pagemsg: '{/literal}{$LANG.page}{literal}',
