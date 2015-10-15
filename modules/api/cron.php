@@ -12,7 +12,7 @@ ini_set('max_execution_time', 600); //600 seconds = 10 minutes
 
 $cron = new cron();
 // remove hardcoding for multi-domain usage
-// $cron->domain_id=1;
+$cron->domain_id=domain_id::get();
 $message = $cron->run();
 
 try 
