@@ -17,6 +17,10 @@ checkLogin();
 	$sth = dbQuery($sql, ':domain_id',domain_id::get());
 	$number_of_invoices  = $sth->fetch(PDO::FETCH_ASSOC);
 
+// below lines added Allows total owing across all invoices
+$invoice = new invoice();
+$Total_Owed = $invoice->select_all_owing();
+
 //all funky xml - sql stuff done in xml.php
 
 $pageActive = "invoice";
